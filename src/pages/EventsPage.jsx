@@ -1,9 +1,12 @@
 import React from 'react'
+import ExploreAacademy from '../components/ExploreAcademy'
+import UpcomingEvents from '../components/UpcomingEvents'
 
 function EventsPage() {
   return (
     <div>
-        <h1>events page</h1>
+        <UpcomingEvents/>
+        <ExploreAacademy/>
     </div>
   )
 }

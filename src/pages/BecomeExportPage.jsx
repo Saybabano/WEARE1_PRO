@@ -1,9 +1,20 @@
 import React from 'react'
+import ExploreAacademy from '../components/ExploreAcademy'
+import FAQSection from '../components/FAQSection'
+import WhyBecomeExport from '../components/WhyBecomeexport'
+import NumbersStats from '../components/NumbersStats'
+import ExportCategories from '../components/ExportCategories'
+import BecameExport from '../components/BecameExport'
 
 function BecomeExportPage() {
   return (
     <div>
-      <h1>Become Export</h1>
+      <BecameExport/>
+      <WhyBecomeExport/>
+      <NumbersStats/>
+      <ExportCategories/>
+      <FAQSection/>
+      <ExploreAacademy/>
     </div>
   )
 }

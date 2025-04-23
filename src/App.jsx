@@ -15,6 +15,8 @@ import Facult from "./pages/Facult";
 import Admissions from "./pages/Admissions";
 import Career from "./pages/Career";
 import CohortProfile from "./pages/CohortProfile";
+import ExperiencePage from "./pages/ExperiencePage";
+import OurStory from "./pages/OurStory"; // ✅ This was missing
 
 const App = () => {
   return (
@@ -27,16 +29,17 @@ const App = () => {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/become-a-master" element={<BecomeExportPage />} />
         <Route path="/blog" element={<BlogsPage />} />
-        {/* Add other routes for FooterNav links if not already present */}
-        <Route path="/highlights" element={<HighlightsPage/>} />
-        <Route path="/curriculum" element={<Curriculum/>} />
-        <Route path="/immersions" element={<Immersions/>} />
-        <Route path="/faculty" element={<Facult/>} />
-        <Route path="/admissions-fees" element={<Admissions/>} />
-        <Route path="/career-prospects" element={<Career/>} />
-        <Route path="/cohort-profile" element={<CohortProfile/>} />
+        <Route path="/highlights" element={<HighlightsPage />} />
+        <Route path="/curriculum" element={<Curriculum />} />
+        <Route path="/immersions" element={<Immersions />} />
+        <Route path="/faculty" element={<Facult />} />
+        <Route path="/admissions-fees" element={<Admissions />} />
+        <Route path="/career-prospects" element={<Career />} />
+        <Route path="/cohort-profile" element={<CohortProfile />} />
+        <Route path="/our-story" element={<OurStory />} /> {/* ✅ This route now works */}
+        <Route path="/experience-page" element={<ExperiencePage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 };
