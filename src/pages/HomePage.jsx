@@ -1,20 +1,21 @@
-import React from 'react'
-import ExploreAacademy from '../components/ExploreAcademy'
-import FAQSection from '../components/FAQSection'
-import PGPRiseSection from '../components/PGPRiseSectio'
-import HighlightsPage from './HighlightsPage'
+import React from 'react';
+import ExploreAcademy from '../components/ExploreAcademy';
+import FAQSection from '../components/FAQSection';
+import PGPRiseSection from '../components/PGPRiseSectio';
+import { Outlet } from 'react-router-dom';
 
 function HomePage() {
   return (
-   <>
-    <div>
-        <PGPRiseSection/>
-        <HighlightsPage/>
-        <FAQSection/>
-        <ExploreAacademy/>
-    </div>
-   </>
-  )
+    <>
+      <div>
+        <PGPRiseSection />
+  
+        <Outlet />
+        <FAQSection />
+        <ExploreAcademy />
+      </div>
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;

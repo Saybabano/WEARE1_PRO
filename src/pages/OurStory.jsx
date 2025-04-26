@@ -1,9 +1,12 @@
 import React from 'react'
+import InclusivitySustainability from '../components/InclusivitySustainability'
+import ExploreAacademy from '../components/ExploreAcademy'
 
 function OurStory() {
   return (
     <div>
-      <h1>Our story</h1>
+      <InclusivitySustainability/>
+      <ExploreAacademy/>
     </div>
   )
 }
