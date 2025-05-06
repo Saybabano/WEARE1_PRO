@@ -85,35 +85,42 @@ export default function LeadershipPage() {
         Level-up Your Leadership
       </h1>
 
-      {/* Responsive Grid Layout */}
       <div className="flex flex-col md:flex-row gap-10">
         {/* Sidebar */}
-        <aside className="md:w-1/4 space-y-8">
-          <div>
-            <h3 className="text-xs uppercase text-yellow-400 tracking-widest">
-              Related Links
-            </h3>
-            <ul className="mt-3 space-y-3 text-sm font-medium">
-              <li className="hover:underline cursor-pointer hover:text-yellow-300">
-                Download Brochure
-              </li>
-              <li className="hover:underline cursor-pointer hover:text-yellow-300">
-                Explore Curriculum
-              </li>
-              <li className="hover:underline cursor-pointer hover:text-yellow-300">
-                All about Admissions
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xs uppercase text-yellow-400 tracking-widest">
-              Socials
-            </h3>
-            <div className="flex space-x-4 mt-3 text-white">
-              <X className="w-5 h-5 hover:text-yellow-300 cursor-pointer" />
-              <Linkedin className="w-5 h-5 hover:text-yellow-300 cursor-pointer" />
-              <Youtube className="w-5 h-5 hover:text-yellow-300 cursor-pointer" />
-              <Instagram className="w-5 h-5 hover:text-yellow-300 cursor-pointer" />
+        <aside className="md:w-1/4">
+          <div className="bg-[#1a1a1a] p-6 rounded-2xl shadow-lg sticky top-20 space-y-10">
+            {/* Related Links */}
+            <div>
+              <h3 className="text-xs uppercase text-yellow-400 tracking-widest">
+                Related Links
+              </h3>
+              <ul className="mt-4 space-y-4 text-sm font-medium">
+                {["Download Brochure", "Explore Curriculum", "All about Admissions"].map((item, index) => (
+                  <li
+                    key={index}
+                    className="hover:underline hover:text-yellow-300 cursor-pointer transition-all"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <hr className="border-gray-700" />
+
+            {/* Socials */}
+            <div>
+              <h3 className="text-xs uppercase text-yellow-400 tracking-widest">
+                Socials
+              </h3>
+              <div className="flex space-x-4 mt-4">
+                {[X, Linkedin, Youtube, Instagram].map((Icon, index) => (
+                  <Icon
+                    key={index}
+                    className="w-6 h-6 text-gray-300 hover:text-yellow-300 cursor-pointer transition-colors"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </aside>
@@ -154,13 +161,13 @@ export default function LeadershipPage() {
               <div className="flex justify-end gap-3 mb-4">
                 <button
                   onClick={() => scroll(section.ref, "left")}
-                  className="p-2 rounded-full border border-yellow-400 hover:bg-yellow-400 hover:text-black"
+                  className="p-2 rounded-full border border-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors"
                 >
                   <ArrowLeft />
                 </button>
                 <button
                   onClick={() => scroll(section.ref, "right")}
-                  className="p-2 rounded-full border border-yellow-400 hover:bg-yellow-400 hover:text-black"
+                  className="p-2 rounded-full border border-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors"
                 >
                   <ArrowRight />
                 </button>

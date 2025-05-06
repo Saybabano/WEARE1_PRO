@@ -43,16 +43,16 @@ const FooterNav = () => {
   const links = [
     { name: "Highlights", path: "/highlights" },
     { name: "Curriculum", path: "/curriculum" },
-    { name: "Immersions", path: "/immersions" },
-    { name: "Faculty", path: "/faculty" },
-    { name: "Admissions & Fees", path: "/admissions-fees" },
-    { name: "Career Prospects", path: "/career-prospects" },
-    { name: "Cohort Profile", path: "/cohort-profile" },
+    // { name: "Immersions", path: "/immersions" },
+    // { name: "Faculty", path: "/faculty" },
+    // { name: "Admissions & Fees", path: "/admissions-fees" },
+    // { name: "Career Prospects", path: "/career-prospects" },
+    // { name: "Cohort Profile", path: "/cohort-profile" },
   ];
 
   return (
     <div className="bg-black border-t border-gray-800 py-6 px-4">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap justify-center md:justify-between gap-4 text-sm text-gray-300">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap  md: justify-around gap-4 text-sm text-gray-300">
         {links.map((item, index) => (
           <Link
             key={index}

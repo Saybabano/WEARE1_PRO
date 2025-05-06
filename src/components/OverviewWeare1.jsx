@@ -18,9 +18,9 @@ const OverviewWeare1 = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: "Format", value: "Blended", subtext: "Online/In-Person Weekend Classes" },
-            { title: "Commencement Date", value: "July", subtext: "(Tentative)" },
+            { title: "Batches start", value: "July", subtext: "(Tentative)" },
             { title: "Duration", value: "12 Months", subtext: "Incl. 2 Immersions" },
-            { title: "Eligibility", value: "Working Professionals", subtext: "Minimum 5 Yrs Work Ex" }
+            { title: "Eligibility", value: "Working Professionals", subtext: "2 Yrs of work experience " }
           ].map((item, index) => (
             <div
               key={index}
