@@ -1,71 +1,32 @@
 import React, { useState } from "react";
-import {
-  FaAngleDown,
-  FaExternalLinkAlt,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const navItems = {
   "ABOUT US": [
     [
-      { label: "Our Story", path: "/our-story" },
-      { label: "Experiences at the Union", path: "/experience-page" },
+      { label: "Team Members", path: "https://weare1.academy/team" },
+      { label: "Partners", path: "https://weare1.academy/partners" },
+      { label: "trainers", path: "https://weare1.academy/trainers" },
+      { label: "About WEARE1", path: "https://weare1.academy/aboutus" },
     ],
   ],
-  ACADEMICS: [
+  "CONTACT US": [
     [
-      { label: "School of Business", path: "/school-of-business" },
-      { label: "School of Emerging Technologies", path: "/school-of-emerging-technologies" },
-      { label: "Executive Education", path: "/executive-education" },
-    ],
-    [
-      { label: "PGP in Tech and Business Management", path: "/pgp-tech-business-management" },
-      { label: "PGP in Family Business Legacy Management", path: "/pgp-family-business-legacy-management" },
-      { label: "UG in Tech and Business Management", path: "/ug-tech-business-management" },
-      { label: "UG in Psychology and Marketing", path: "/ug-psychology-marketing" },
-    ],
-    [
-      { label: "Highlights", path: "/academics-highlights" },
-      { label: "Curriculum", path: "/curriculum" },
-      { label: "Global Immersions", path: "/global-immersions" },
-      { label: "Admissions & Fees", path: "/admissions-fees" },
-      { label: "Career Prospects", path: "/career-prospects" },
-      { label: "Cohort Profile", path: "/cohort-profile" },
-    ],
-  ],
-  "STUDENT LIFE": [
-    [
-      { label: "Campus Life", path: "/campus-life" },
-      { label: "Student Clubs", path: "/student-clubs" },
-      { label: "Events", path: "/events" },
-      { label: "Housing", path: "/housing" },
-    ],
-  ],
-  INNOVATION: [
-    [
-      { label: "Labs", path: "/innovation-labs" },
-      { label: "Research", path: "/research" },
-      { label: "Startups", path: "/startups" },
-      { label: "Tech Expo", path: "/tech-expo" },
+      { label: "Get in Touch", path: "/contact" },
+      { label: "FAQs", path: "/faqs" },
     ],
   ],
 };
 
-const TopLinks = [
-  { label: "For Companies", path: "/companypage" },
-  { label: "Jobs", path: "/jobs" },
-  { label: "Events", path: "/events" },
-  { label: "Become a Master", path: "/become-a-master" },
-  { label: "Blog", path: "/blog" },
+const simpleNavLinks = [
+  { label: "COURSES", path: "https://weare1.academy/#popular-course" },
+  { label: "COMPANY HIRING", path: "https://weare1.academy/companies" },
 ];
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const isMegaMenu = (label) => navItems[label]?.length > 1;
 
   const toggleDropdown = (label) => {
     setActiveMenu(activeMenu === label ? null : label);
@@ -73,27 +34,38 @@ const Navbar = () => {
 
   return (
     <div className="w-full">
-      {/* Top Bar */}
-      <div className="bg-black text-gray-400 text-[12px] py-2 px-4 hidden md:flex justify-end gap-x-4">
-        {TopLinks.map((link) => (
-          <Link key={link.label} to={link.path} className="cursor-pointer hover:underline">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      {/* Navbar */}
-      <nav className="bg-black text-white px-4 py-3 sticky top-0 z-50">
+      <nav className="text-gray-700 h-25 px-4 py-5 sticky top-0 z-50 bg-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <img src="/logo.png" alt="logo" className="h-10" />
+          <img
+            src="https://weare1.academy/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.4d572962.png&w=256&q=75"
+            alt="logo"
+            className="h-10"
+          />
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-6 relative">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8 relative">
+            <Link
+              to="/"
+              className="font-semibold text-gray-200 hover:text-yellow-400 transition-all py-2"
+            >
+              HOME
+            </Link>
+
+            {simpleNavLinks.map((item) => (
+              <Link
+                key={item.label}
+                to={item.path}
+                className="font-semibold text-gray-200 hover:text-yellow-400 transition-all py-2"
+              >
+                {item.label}
+              </Link>
+            ))}
+
             {Object.keys(navItems).map((label) => (
               <div className="relative" key={label}>
                 <button
-                  className={`flex items-center font-semibold text-xs hover:text-yellow-300 transition-all ${
-                    activeMenu === label ? "text-yellow-300" : ""
+                  className={`flex items-center font-semibold text-gray-200 hover:text-yellow-400 transition-all py-2 ${
+                    activeMenu === label ? "text-yellow-400" : ""
                   }`}
                   onClick={() => toggleDropdown(label)}
                 >
@@ -101,88 +73,82 @@ const Navbar = () => {
                 </button>
 
                 {activeMenu === label && (
-                  <div
-                    className={`absolute top-[100%] mt-4 bg-black border-b-4 border-yellow-300 p-4 z-50 shadow-lg text-xs transition-all duration-200 ease-in-out ${
-                      isMegaMenu(label) ? "grid grid-cols-3 gap-6 w-[48rem]" : "w-48"
-                    } ${label === "INNOVATION" ? "right-0" : "left-1/2 -translate-x-1/2"}`}
-                  >
-                    {navItems[label].map((column, colIndex) => (
-                      <div key={colIndex}>
-                        {column.map((item, i) => (
-                          <Link
-                            key={i}
-                            to={item.path}
-                            className="mb-2 flex items-center gap-1 cursor-pointer hover:underline"
-                          >
-                            {item.label.includes("🔗") ? (
-                              <>
-                                {item.label.replace(" 🔗", "")}
-                                <FaExternalLinkAlt className="text-xs" />
-                              </>
-                            ) : (
-                              item.label
-                            )}
-                          </Link>
-                        ))}
-                      </div>
+                  <div className="absolute top-full mt-3 bg-black text-gray-200 border-b-4 border-yellow-400 p-4 shadow-lg text-md w-64 rounded-lg transition-all">
+                    {navItems[label][0].map((item, i) => (
+                      <a
+                        key={i}
+                        href={item.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block mb-2 hover:underline"
+                      >
+                        {item.label}
+                      </a>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-            <Link to="/careers" className="font-semibold text-xs hover:text-yellow-300 transition-all">
-              CAREERS
-            </Link>
           </div>
 
-          {/* Hamburger (Mobile) */}
-          <button className="md:hidden text-white text-2xl" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden text-white text-3xl"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 space-y-6 px-4 text-xs">
-            <div className="bg-black text-yellow-300 text-[12px] py-2 flex flex-wrap justify-center gap-3 border-y border-gray-700">
-              {TopLinks.map((link) => (
-                <Link key={link.label} to={link.path} onClick={() => setIsMobileMenuOpen(false)} className="cursor-pointer hover:underline">
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+          <div className="md:hidden mt-4 space-y-4 px-4 text-md bg-black text-gray-200 shadow-lg rounded-lg">
+            <Link
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block font-semibold py-2 hover:text-yellow-300"
+            >
+              HOME
+            </Link>
+
+            {simpleNavLinks.map((item) => (
+              <Link
+                key={item.label}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-semibold py-2 hover:text-yellow-300"
+              >
+                {item.label}
+              </Link>
+            ))}
 
             {Object.keys(navItems).map((label) => (
-              <div key={label} className="relative">
-                <button onClick={() => toggleDropdown(label)} className="flex items-center justify-between w-full font-semibold py-2">
+              <div key={label}>
+                <button
+                  onClick={() => toggleDropdown(label)}
+                  className="flex items-center justify-between w-full font-semibold py-2 text-gray-200 hover:text-yellow-400"
+                >
                   {label} <FaAngleDown />
                 </button>
 
                 {activeMenu === label && (
-                  <div className="bg-black border-l-4 border-yellow-300 pl-4 mt-2 transition-all duration-200 ease-in-out grid gap-4">
-                    {navItems[label].map((column, colIndex) => (
-                      <div key={colIndex}>
-                        {column.map((item, i) => (
-                          <Link key={i} to={item.path} onClick={() => setIsMobileMenuOpen(false)} className="mb-2 flex items-center gap-1 cursor-pointer hover:underline">
-                            {item.label.includes("🔗") ? (
-                              <>
-                                {item.label.replace(" 🔗", "")}
-                                <FaExternalLinkAlt className="text-xs" />
-                              </>
-                            ) : (
-                              item.label
-                            )}
-                          </Link>
-                        ))}
-                      </div>
+                  <div className="bg-black border-l-4 border-yellow-300 pl-4 mt-2">
+                    {navItems[label][0].map((item, i) => (
+                      <a
+                        key={i}
+                        href={item.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block mb-2 hover:underline text-gray-200"
+                      >
+                        {item.label}
+                      </a>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-            <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} className="block font-semibold py-2 text-yellow-300 hover:underline">
-              CAREERS
-            </Link>
           </div>
         )}
       </nav>

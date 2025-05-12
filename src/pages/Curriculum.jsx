@@ -1,9 +1,11 @@
 import React from 'react'
+import VIPChallengeSection from '../components/VIPChallengeSection'
+
 
 function Curriculum() {
   return (
     <div>
-      <h1>Curriculum</h1>
+      <VIPChallengeSection/>
     </div>
   )
 }

@@ -17,6 +17,7 @@ import Career from "./pages/Career";
 import CohortProfile from "./pages/CohortProfile";
 import ExperiencePage from "./pages/ExperiencePage";
 import OurStory from "./pages/OurStory";
+import CreateAccountPage from "./pages/CreateAccountPage";
 
 const App = () => {
   return (
@@ -28,21 +29,11 @@ const App = () => {
           <Route index element={<Curriculum />} />
           <Route path="highlights" element={<HighlightsPage />} />
           <Route path="curriculum" element={<Curriculum />} />
-          <Route path="immersions" element={<Immersions />} />
-          <Route path="faculty" element={<Facult />} />
-          <Route path="admissions-fees" element={<Admissions />} />
-          <Route path="career-prospects" element={<Career />} />
-          <Route path="cohort-profile" element={<CohortProfile />} />
+    
         </Route>
 
-        {/* Other non-nested routes */}
-        <Route path="/companypage" element={<CompanyPage />} />
-        <Route path="/jobs" element={<JobsPage />} />
-        <Route path="/events" element={<EventsPage />} />
-        <Route path="/become-a-master" element={<BecomeExportPage />} />
-        <Route path="/blog" element={<BlogsPage />} />
-        <Route path="/our-story" element={<OurStory />} />
-        <Route path="/experience-page" element={<ExperiencePage />} />
+      
+        <Route path="/create-account" element={<CreateAccountPage/>} />
       </Routes>
       <Footer />
     </>
