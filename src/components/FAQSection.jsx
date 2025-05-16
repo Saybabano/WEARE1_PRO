@@ -11,12 +11,13 @@ const tabs = [
 
 const faqData = {
   General: [
-    { question: "Is this program equivalent to other Executive MBAs?", answer: "Yes, it is comparable in academic rigor." },
-    { question: "Can I work full-time during the program?", answer: "Yes, it's designed for working professionals." },
-    { question: "How is residency handled?", answer: "Residency is hybrid and flexible." },
-    { question: "What is the duration of the program?", answer: "It lasts approximately 12 months." },
-    { question: "What is the mode of instruction?", answer: "Blended learning – online and in-person." },
-    
+    { question: "Is this course only for gamers?", answer: "No. This program is for anyone interested in the esports business – marketing professionals, analysts, event planners, and entrepreneurs are all welcome." },
+    { question: "Do I need prior experience in esports?", answer: "Not at all. We begin with fundamentals and guide you through to advanced strategy, so beginners and pros both gain value." },
+    { question: " Is this a certified program?", answer: "Yes. Upon completion, you receive an industry-recognized certification from WeAre1 Academy." },
+    { question: "WAre there any internships or placement support?", answer: "Absolutely. We offer live projects, internships with esports companies, and career guidance." },
+    { question: " Can I manage the course with my job or college?", answer: "Yes, it’s designed to be flexible for working professionals and college students, with weekend classes and online access." },
+    { question: "  Will I get to work on real tournaments or teams?", answer: "Yes. Our capstone projects include managing real esports events or collaborating with active teams." },
+
   ],
   Eligibility: [
     { question: "What’s the minimum experience required?", answer: "At least 3 years in a managerial role." },

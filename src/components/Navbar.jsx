@@ -34,12 +34,12 @@ const Navbar = () => {
 
   return (
     <div className="w-full">
-      <nav className="text-gray-700 h-25 px-4 py-5 sticky top-0 z-50 bg-black">
+      <nav className="text-gray-700 px-4 py-5 sticky top-0 z-50 bg-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <img
             src="https://weare1.academy/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.4d572962.png&w=256&q=75"
             alt="logo"
-            className="h-10"
+            className="h-13"
           />
 
           {/* Desktop Menu */}

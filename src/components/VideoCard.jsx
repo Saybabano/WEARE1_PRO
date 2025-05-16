@@ -7,7 +7,7 @@ const VideoCard = () => {
       {/* YouTube Video */}
       <iframe
         width="100%"
-        height="100%"
+        height="60%"
         src="https://www.youtube.com/embed/8FEMi8z-uTg"
         title="YouTube video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
