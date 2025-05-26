@@ -2,7 +2,7 @@ import React from "react";
 import HeaderSection from "./HeaderSection";
 import ActionButtons from "./ActionButtons";
 import FooterNav from "./FooterNav";
-import Videos from "../videos/BTH Office V4.mp4";
+import Videos from "../videos/V4.mp4";
 
 const Weare1seSection = () => {
   return (
