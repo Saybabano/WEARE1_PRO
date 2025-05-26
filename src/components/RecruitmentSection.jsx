@@ -1,4 +1,5 @@
 import React from "react";
+import CollageImage from "../images/Collage image.png";
 
 const RecruitmentSection = () => {
   return (
@@ -41,22 +42,12 @@ const RecruitmentSection = () => {
             ))}
           </div>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Image Section */}
+          <div>
             <img
-              src="https://dgtg.in/images/aboutus/gallery1.png"
+              src={CollageImage}
               alt="Event"
-              className="rounded-xl w-full h-[180px] sm:h-[220px] object-cover col-span-1 sm:col-span-2"
-            />
-            <img
-              src="https://media.licdn.com/dms/image/v2/C4E1BAQG2zNzTfWYo2Q/company-background_10000/company-background_10000/0/1584619185616/dgtg_marketing__retail_private_limited_cover?e=2147483647&v=beta&t=j_sVvjl2-z_-MG1uHid3U7FNFYwIKcLwv6YprMk4ZeE"
-              alt="Team Group"
-              className="rounded-xl w-full h-[160px] sm:h-[170px] object-cover"
-            />
-            <img
-              src="https://dgtg.in/images/Home/dgtg.png"
-              alt="Panel Discussion"
-              className="rounded-xl w-full h-[160px] sm:h-[170px] object-cover"
+              className="rounded-xl w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-full object-cover"
             />
           </div>
         </div>

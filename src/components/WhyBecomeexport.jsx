@@ -1,27 +1,34 @@
 import React from "react";
-import { FaGamepad, FaChalkboardTeacher, FaHandshake, FaLaptopCode, FaRocket } from "react-icons/fa";
+import CollageImage from "../images/Collage image.png";
+
+// Import icon images
+import Icon1 from "../images/001.png";
+import Icon2 from "../images/002.png";
+import Icon3 from "../images/003.png";
+import Icon4 from "../images/004.png";
+import Icon5 from "../images/005.png";
 
 const WhyBecomeMaster = () => {
   const features = [
     {
       title: "Dedicated Esports Education Platform in India",
-      icon: <FaGamepad />,
+      icon: Icon1,
     },
     {
       title: "Faculty with Gaming + Business Expertise",
-      icon: <FaChalkboardTeacher />,
+      icon: Icon2,
     },
     {
       title: "Industry Partnerships with Tournaments, Teams, Startups",
-      icon: <FaHandshake />,
+      icon: Icon3,
     },
     {
       title: "Blended Learning: Online + Real-Time Events",
-      icon: <FaLaptopCode />,
+      icon: Icon4,
     },
     {
       title: "Portfolio Development & Startup Incubation",
-      icon: <FaRocket />,
+      icon: Icon5,
     },
   ];
 
@@ -43,8 +50,12 @@ const WhyBecomeMaster = () => {
           <div className="space-y-6 text-white">
             {features.map((item, index) => (
               <div key={index} className="flex items-start gap-4">
-                <div className="bg-white rounded-full p-3 w-12 h-12 flex items-center justify-center text-black text-xl">
-                  {item.icon}
+                <div className="flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt={`Icon ${index + 1}`}
+                    className="w-6 h-6"
+                  />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-400 hover:text-white transition-colors duration-300">
                   {item.title}
@@ -56,7 +67,7 @@ const WhyBecomeMaster = () => {
           {/* Right - Image */}
           <div className="w-full">
             <img
-              src="https://www.eventsforgamers.com/wp-content/uploads/2020/07/MiddleEastGameCon.jpg"
+              src={CollageImage}
               alt="Event Preview"
               className="rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-full mx-auto"
             />

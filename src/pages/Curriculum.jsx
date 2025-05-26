@@ -4,7 +4,7 @@ import YoungLeaders from '../components/YoungLeaders'
 import MentorsGuests from '../components/MentorsGuests'
 import RecruitmentSection from '../components/RecruitmentSection'
 import WhyBecomeExport from '../components/WhyBecomeexport'
-import EsportsCTA from '../components/EsportsCTA'
+// import EsportsCTA from '../components/EsportsCTA'
 
 
 
@@ -16,7 +16,7 @@ function Curriculum() {
       <MentorsGuests/>
       <RecruitmentSection/>
       <WhyBecomeExport/>
-      <EsportsCTA/>
+      {/* <EsportsCTA/> */}
     </div>
   )
 }
