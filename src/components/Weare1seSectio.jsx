@@ -2,7 +2,7 @@ import React from "react";
 import HeaderSection from "./HeaderSection";
 import ActionButtons from "./ActionButtons";
 import FooterNav from "./FooterNav";
-import Videos from "../videos/V4.mp4";
+// import Videos from "../videos/V4.mp4";
 
 const Weare1seSection = () => {
   return (
@@ -11,7 +11,7 @@ const Weare1seSection = () => {
         {/* Background Video */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
-          src={Videos}
+          src={'../videos/V4.mp4'}
           autoPlay
           muted
           loop
